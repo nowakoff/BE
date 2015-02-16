@@ -1,0 +1,41 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/git/jquery.mobile-git.css"/>
+
+<script>
+
+    function get(name){
+        if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+          return decodeURIComponent(name[1]);
+    };
+
+    $(document).ready(function () {
+      var voteid = get('vid');
+    
+        $.ajax({
+           url: "http://icnightschool.azurewebsites.net/votename.aspx",
+           data: { VoteId: voteid },
+           success: function (result) {
+                console.log(result);
+                var jsonvotedetails = JSON.parse(result);
+                var votequestion = '';
+                console.log(jsonvotedetails);
+                $(jsonvotedetails.Votes).each(function(i,el){
+                  if(el.VoteId == voteid)
+                    votequestion = el.Vote_Question;
+                });
+                $("#question").append('<h1>'+votequestion+'</h1>');
+
+            }
+        });
+    });
+</script>
+        
+</head>
+<body>
+    <div id="question"></div>
+    <div id="answerlist"></div>
+</body>
+</html>

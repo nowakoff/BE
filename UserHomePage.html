@@ -1,0 +1,140 @@
+<html>
+<head>
+		
+		<title>User Home</title>
+		<meta charset="utf-8">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="./css/grid.css" rel="stylesheet" />
+		<link href="./css/bootstrap.css" rel="stylesheet" />
+		<!-- // <script src="http://code.jquery.com/jquery-1.8.3.js"></script> -->
+		<!-- // <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/> -->
+
+	<script src="https://code.jquery.com/jquery-1.8.3.js"></script>
+<script src="https://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/git/jquery.mobile-git.css"/>
+	
+	<!-- // <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+	
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+	<div id="header">
+		<img src="./img/sf.jpg"/>
+			<div class="div"></div></div>
+			
+
+	<div id="container">
+<div class="jumbotron">
+	<div class="line">
+
+		<a onclick="window.location.href='index.html'" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete Icon</a>
+	</div>
+	<div id="votelist"></div>
+
+	
+	<script>
+
+	    $(document).ready(function () {
+        $.ajax({
+           url: "http://icnightschool.azurewebsites.net/votename.aspx",
+           success: function (result) {
+                // console.log(result);
+                var jsonvotes = JSON.parse(result);
+                $.each(jsonvotes.Votes, function(i, item) {
+                
+        			$("#votelist").prepend('<button class="ui-btn votebutton" id="' + item.VoteId +'">'+item.Vote_Name+ '</button>');
+        		});
+                
+                //this can only run after the above code added the items with a class of votebutton		
+
+                $(".votebutton").click(function(event){
+                    console.log('vote button clicked');
+                    var voteid = event.target.id;
+                    console.log('id: ' + voteid);
+                    localStorage.voteid = voteid;
+                    window.location = 'uexyesno.html?vid='+voteid;
+
+                });
+
+            }
+       
+            });
+
+        
+
+        
+    });
+
+
+    // $(document).ready(function () {
+    //     $.ajax({
+    //        url: "http://icnightschool.azurewebsites.net/votename.aspx",
+    //        success: function (result) {
+    //             console.log(result);
+    //             var jsonvotes = JSON.parse(result);
+    //             $.each(jsonvotes.Votes, function(i, item) {
+                
+    //     			$("#votelist").prepend('<button class="ui-btn votebutton" id="' + item.VoteId +'">'+item.Vote_Name+ '</button>');
+    //     		});
+                
+    //             //this can only run after the above code added the items with a class of votebutton		
+
+    //             $(".votebutton").click(function(event){
+    //                 console.log('vote button clicked');
+    //                 var voteid = event.target.id;
+    //                 console.log('id: ' + voteid);
+    //                 localStorage.voteid = voteid;
+    //                 window.location = 'uexyesno.html?vid=';
+
+    //             });
+
+    //         }
+       
+    //         });
+    //       });
+
+
+        // $(document).ready(function () {
+        //     console.log("hello");
+        //     $.ajax({
+        //         url: "http://icnightschool.azurewebsites.net/votename.aspx",
+        //         success: function (result) {
+        //             console.log('works');
+        //             var jsonvotedetails = JSON.parse(result);
+        //             console.log(jsonvotedetails);
+        //             $(jsonvotedetails.Votes.reverse()).each(function (i, item) {
+        //                 $('#milk').append('<button class="ui-btn votebutton" id="' + item.VoteId +'">'+item.Vote_Name+ '</button>');
+                       
+        //             });
+        //          	 $(".votebutton").click(function(event){
+        //             console.log('vote button clicked');
+        //             var voteid = event.target.id;
+        //             console.log('id: ' + voteid);
+        //             localStorage.voteid = voteid;
+        //             window.location = 'kupa.html';
+        //         });   
+
+        //         }
+        //     });
+        // });
+      
+           
+    </script>
+    
+</div>
+</body>
+</html>
+
+
