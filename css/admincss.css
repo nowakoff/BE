@@ -167,6 +167,17 @@ div li button {
 	width:100%;
 }
 
+div form input{
+	display: block;
+	width: 85%;
+	height: 35px;
+}
+#Quorum {
+	width: 20%;
+}
+#sendNow {
+	width: 25%;
+}
 #election {
 	text-align: center;
 	width: 75%;
@@ -204,8 +215,6 @@ div li button {
 	float:left;
 	display:inline-block;
 }
-
-
 
 li {
 	list-style-type:none;
@@ -394,7 +403,6 @@ img{
 	border-radius: 10px;
 	font-weight: bold;
 }
-
 
 input{
 	text-align: center;

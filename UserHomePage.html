@@ -1,14 +1,16 @@
 <html>
 <head>
-		
+		<link rel="icon" type="image/ico" href="./img/seyvote.ico.png"/>
+		<link rel="shortcut icon" href="./img/seyvote.ico.png" />
 		<title>User Home</title>
 		<meta charset="utf-8">
 	  	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="./css/grid.css" rel="stylesheet" />
 		<link href="./css/bootstrap.css" rel="stylesheet" /> 
+		<link href="./css/admincss.css" rel="stylesheet" /> 
 		 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 	 
-         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/> 
+        
 
 	 <script src="https://code.jquery.com/jquery-1.8.3.js"></script>
      <!-- <script src="https://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>--> 
@@ -24,39 +26,27 @@
 </head>
 <body>
 
-
-
-
-
-
-
-	<div id="header">
+<div class="container">
+	<header>
 		<img src="./img/sf.jpg"/>
-			<div class="div"></div></div>
-			
-
-	<div id="container">
+			<div class="div"></div>
+	</header>
+		
 <div class="jumbotron">
-	<div class="line">
-
-		<a onclick="window.location.href='index.html'" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete Icon</a>
-	</div>
-	 <!-- //Those are ELECTIONS with type E !!!!!!!!!!!   -->
-     <h3>Elections</h3>
+     <h3>Votes</h3>
 	<div id="votelist">
-       
     </div>
-    
-    <!-- //Those are VOTES !!!!!!!!!!!   -->
-    <h3>Votes</h3>
+    <h3>Elections</h3>
     <div id="votelistt">
         
     </div>
-
+	<div class="line">
+		<a onclick="window.location.href='index.html'" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete Icon</a>
+	</div> <p> Log Out</p>
 
 	
 	<script>
-//Those are ELECTIONS !!!!!!!!!!!
+
 	    $(document).ready(function () {
         $.ajax({
            url: "http://icnightschool.azurewebsites.net/votename.aspx",
@@ -84,7 +74,8 @@
             });
         });
 
-       // change code here //Those are VOTES with type V !!!!!!!!!!! 
+
+       // change code here 
         $(document).ready(function () {
         $.ajax({
            url: "http://icnightschool.azurewebsites.net/votenamev.aspx",

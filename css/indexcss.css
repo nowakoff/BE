@@ -1,0 +1,100 @@
+body {
+	
+	background: url("./img/Home.jpg");
+	text-align: center;
+	font-family: Verdana, Tahoma, Arial, sans-serif;
+	font-size: 18px;
+	overflow: auto;
+}
+
+#wrapper {
+	margin: 0 auto;
+	max-width: 1020px;
+	width: 98%;
+	border: none;
+	border-radius: 2px;
+	background: none;
+	position: relative;
+	top: 60px;
+	box-shadow:none;
+}
+#wrapper img {
+	opacity: 0.8;
+}
+header {
+	width: 96%;
+	min-height: 125px;
+	padding: 5px;
+	text-align: center;
+}
+#login form input {
+	top:80px;
+	font-size: 25px;
+	text-align: center;
+	width: 50%;
+	height: 50px;
+	margin: 0 auto 5px auto;
+	opacity: 0.8;
+}
+#login form input.submit {
+	opacity:1;
+}
+
+#login {
+	position:relative;
+	top: 80px;
+	margin: 0 auto;
+	border:10px 10px 10px 10px;
+	height:50px 50px 50px 50px;
+}
+div ul li {
+	list-style-type:none;
+}	
+header ul li {
+	display:inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+
+/*--------------------------MEDIA!!!-----------------*/
+@media screen and (max-width: 479px) {
+	body {
+		background: url("./img/Seyvote.png");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center; 
+		background-color: #000000;
+		width: 100%;
+		margin: 0 auto;
+		background-size: 100%;
+		z-index: 5;
+	}
+	#login {
+		top: 250px;
+		margin: 0 auto;
+		width: 90%;
+		float: left;
+	}
+	#login form input {
+		font-size: 15px;
+		width: 100%;
+		height: 25px;
+		margin: 0 auto;
+	}
+	#wrapper h1{
+		display: none;
+	}
+	#wrapper div h2 {
+		display: inline;
+	}
+	#wrapper img {
+		opacity: 1;		
+		display: none;
+	}
+	div h2 {
+		top: 550px;
+		color: white;
+	}
+}
