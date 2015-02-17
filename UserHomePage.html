@@ -37,7 +37,7 @@
 	<div id="votelist">
     </div>
     <h3>Elections</h3>
-    <div id="votelistt">
+    <div id="elections">
         
     </div>
 	<div class="line">
@@ -46,10 +46,11 @@
 
 	
 	<script>
+    //votes
 
 	    $(document).ready(function () {
         $.ajax({
-           url: "http://icnightschool.azurewebsites.net/votename.aspx",
+           url: "http://icnightschool.azurewebsites.net/votenamev.aspx",
            success: function (result) {
                 // console.log(result);
                 var jsonvotes = JSON.parse(result);
@@ -75,16 +76,16 @@
         });
 
 
-       // change code here 
+       // change code here elections
         $(document).ready(function () {
         $.ajax({
-           url: "http://icnightschool.azurewebsites.net/votenamev.aspx",
+           url: "http://icnightschool.azurewebsites.net/votename.aspx",
            success: function (result) {
                 // console.log(result);
                 var jsonvotes = JSON.parse(result);
                 $.each(jsonvotes.Votes, function(i, item) {
                 
-                    $("#votelistt").prepend('<button class="ui-btn votebuttonn" id="' + item.VoteId +'">'+item.Vote_Name+ '</button>');
+                    $("#elections").prepend('<button class="ui-btn votebuttonn" id="' + item.VoteId +'">'+item.Vote_Name+ '</button>');
                 });
                 
                 //this can only run after the above code added the items with a class of votebutton     
