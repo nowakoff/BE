@@ -41,10 +41,13 @@
 
 		<a onclick="window.location.href='index.html'" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete Icon</a>
 	</div>
+	 <!-- //Those are ELECTIONS with type E !!!!!!!!!!!   -->
      <h3>Elections</h3>
 	<div id="votelist">
        
     </div>
+    
+    <!-- //Those are VOTES !!!!!!!!!!!   -->
     <h3>Votes</h3>
     <div id="votelistt">
         
@@ -53,7 +56,7 @@
 
 	
 	<script>
-
+//Those are ELECTIONS !!!!!!!!!!!
 	    $(document).ready(function () {
         $.ajax({
            url: "http://icnightschool.azurewebsites.net/votename.aspx",
@@ -81,7 +84,7 @@
             });
         });
 
-       // change code here 
+       // change code here //Those are VOTES with type V !!!!!!!!!!! 
         $(document).ready(function () {
         $.ajax({
            url: "http://icnightschool.azurewebsites.net/votenamev.aspx",
