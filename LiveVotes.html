@@ -8,9 +8,13 @@
 	<link href="./css/bootstrap.css" rel="stylesheet" />
 	<link href="./css/admincss.css" rel="stylesheet" />
 
+
 	<style>
 	
 	
+	.style{
+		color: red;
+	}
 	.inline button{
 		
 		display: inline !important;
@@ -31,7 +35,12 @@
 
 	<center>
 	<h1>Live Votes</h1>
+	<h3>Stop Vote</h3>
 	<div id="milk">
+	<!-- 	add input with name="disablevote" -->
+		</div>
+		<h3>Stop Elections</h3>
+	<div id="milkk">
 	<!-- 	add input with name="disablevote" -->
 		</div>
 		</div>
@@ -47,7 +56,7 @@
                     var j = JSON.parse(result);
                     console.log(j);
                     $(j.Votes.reverse()).each(function (i, val) {
-                        $('#milk').append('<button>' + '<a href="voting.html">' + val.Vote_Name +  '<a/>' + '</button>'+ '<button>' +"stop"+'</button>');
+                        $('#milk').append('<button class="style">' + '<a href="voting.html">' + val.Vote_Name +  '<a/>' + '</button>'+ '<button>' +"stop"+'</button>');
                        
                     });
                     
@@ -57,24 +66,32 @@
         });
         // push message that you want to stop voting
 
-			$(document).ready(function () {
-        $("#postvote").submit(function () {
+
+			// display votes
+      
+       $(document).ready(function () {
+            console.log("hello");
             $.ajax({
-                type: "POST",
-                url: "http://icnightschool.azurewebsites.net/postvote.aspx",
-                data: $(this).serialize(),
-                complete: function (data) {
-                    window.location = 'AdminHomePage.html';
+                url: "http://icnightschool.azurewebsites.net/votenamev.aspx",
+                success: function (result) {
+                    console.log('works');
+                    var j = JSON.parse(result);
+                    console.log(j);
+                    $(j.Votes.reverse()).each(function (i, val) {
+                        $('#milkk').append('<button class="style">' + '<a href="voting.html">' + val.Vote_Name +  '<a/>' + '</button>'+ '<button>' +"stop"+'</button>');
+                       
+                    });
+                    
+
                 }
             });
-
         });
-    });
-      
-           
-    </script>
+        // push message that you want to stop voting
 
-	<script type="text/javascript" src="main.js"></script>
+	    
+    </script>
+    <script src="https://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+
 
 
 

@@ -34,7 +34,7 @@
 
         <label>Quorum</label>
         <input type="number" name="quorum">
-
+        <input type="hidden" name="type" value="E">
       
     </form>
 
@@ -62,7 +62,7 @@
 		getMyCandidates: function() {
 			var myCandidates = '';
 			$('.list .item span').each(function(index,element){
-				$('#postvote').append('<input type="hidden" name="choice" value="' + $(element).text() + '">');
+				$('#postvote').append('<input type="text" name="choice" value="' + $(element).text() + '">');
 			});
 		},
 
@@ -104,15 +104,21 @@
 			});
 
 	        $("#sendNow").click(function (e) {
-	        	
+            	CreateElections.getMyCandidates();
+	        	console.log('serlialized form:');
+	        	console.log($('#postvote').serialize());
+
 	            $.ajax({
 	                type: "POST",
 	                url: "http://icnightschool.azurewebsites.net/ce.aspx",
 	                data: $('#postvote').serialize(),
 	                beforeSend: function() {
-	                	CreateElections.getMyCandidates();
+	                	//CreateElections.getMyCandidates();
+			        	//console.log('serlialized form:');
+			        	//console.log($('#postvote').serialize());
 	                },
 	                complete: function (data) {
+	                	console.log(data);
 	                    //window.location = 'AdminHomePage.html';
 	                }
 	            });
