@@ -78,7 +78,8 @@ ul {
 	margin: 0 auto;
 	border:10px 10px 10px 10px;
 	height:50px 50px 50px 50px;
-}
+}
+
 #login form input {
 	font-size: 25px;
 	text-align: center;
@@ -1450,6 +1451,7 @@ input{
 
 button{
 	height: relative;
+	
 }
 button:hover{
 	background-color:#ccc !important;

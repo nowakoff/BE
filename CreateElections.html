@@ -117,8 +117,9 @@
 			        	//console.log($('#postvote').serialize());
 	                },
 	                complete: function (data) {
+	                	confirm("Are you sure ?");
 	                	console.log(data);
-	                    //window.location = 'AdminHomePage.html';
+	                    window.location = 'AdminHomePage.html';
 	                }
 	            });
 
@@ -136,7 +137,9 @@
     }); // doc ready ends here
 	</script>
 
-
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 
 
