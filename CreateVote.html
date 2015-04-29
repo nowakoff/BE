@@ -44,10 +44,10 @@
 
 
 		  <form id="postvote">
-        <label>Election's Name</label>
+        <label>Vote's Name</label>
             <input type="text" name="vote_name">
         
-        <label>Election's Question</label>
+        <label>Vote's Question</label>
         <input type="text" name="vote_question">
 
         <label>Quorum</label>
@@ -61,10 +61,6 @@
         <input type="submit" id="sendNow" value="
         ">
         
-
-
-           <!-- <input type="hidden" name="choice" value="yes">
-           <input type="hidden" name="choice" value="no"> -->
 
     </form>
 
@@ -94,41 +90,7 @@
         });
     });
 
-			// create elections code 
-
-	// 		var CreateElections = {
-	// 	init: function() {
-	// 		CreateElections.bindEvents();
-	// 	},
-
-		
-
-	//         $("#sendNow").click(function (e) {
-	        	
-	//             $.ajax({
-	//                 type: "POST",
-	//                 url: "http://icnightschool.azurewebsites.net/ce.aspx",
-	//                 data: $('#postvote').serialize(),
-	//                 beforeSend: function() {
-	//                 	CreateElections.getMyCandidates();
-	//                 },
-	//                 complete: function (data) {
-	//                     window.location = 'AdminHomePage.html';
-	//                 }
-	//             });
-
-	            
-
-	//             e.stopPropagation();
-	//             e.preventDefault();
-	//         });
-	// 	}
-	// }; // create elections end here
-
-
-	// $(document).ready(function(){
-	// 	 CreateElections.init();
- //    }); // doc ready ends here
+	
 
 
 			</script>
